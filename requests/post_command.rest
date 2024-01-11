@@ -1,0 +1,14 @@
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+#Send twice to test for duplicates
+{
+  "name": "Aku Ankka",
+  "number": "987 654 321"
+}
+
+
+#Test without name
+# {
+#   "number": "987 654 321"
+# }
