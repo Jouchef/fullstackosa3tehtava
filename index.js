@@ -68,7 +68,11 @@ app.get('/info', (req, res, next) => {
     person.save().then(savedPerson => {
       res.json(savedPerson)
     })
-    .catch(error => next(error))
+    .catch(error => {
+      console.log("catch:")
+      next(error)
+    })
+  
   })
 
   app.get('/api/persons/:id', (req, res) => {
@@ -112,6 +116,10 @@ app.get('/info', (req, res, next) => {
     if (error.name === 'CastError') {
       console.log('käsitellään CastError')
       return response.status(400).send({ error: 'malformatted id' })
+    }
+    if (error.name === 'ValidationError') {
+      console.log('käsitellään ValidationError')
+      return response.status(400).json({ error: error.message })
     }
 
     if (error.status === 400) {

@@ -3,8 +3,8 @@ Content-Type: application/json
 
 #Send twice to test for duplicates
 {
-  "name": "Iines Ankka",
-  "number": "987 654"
+  "name": "Hannu Hanhi",
+  "number": "123-456789"
 }
 
 
